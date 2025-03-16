@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Commits for {{ repo }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .commit { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Commits for {{ owner }}/{{ repo }}</h1>
+    {% for commit in commits %}
+        <div class="commit">
+            <p><strong>Message:</strong> {{ commit.message }}</p>
+            <p><strong>Author:</strong> {{ commit.author }}</p>
+            <p><strong>Date:</strong> {{ commit.date }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

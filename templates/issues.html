@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issues for {{ repo }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .issue { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+        .no-issues { color: #666; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Issues for {{ owner }}/{{ repo }}</h1>
+    {% if issues %}
+        {% for issue in issues %}
+            <div class="issue">
+                <h2>{{ issue.title }}</h2>
+                <a href="{{ issue.url }}" target="_blank">{{ issue.url }}</a>
+                <p><strong>State:</strong> {{ issue.state }}</p>
+                <p><strong>Created:</strong> {{ issue.created_at }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="no-issues">No issues found for this repository.</p>
+    {% endif %}
+</body>
+</html>

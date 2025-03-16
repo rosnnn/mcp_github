@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Repositories</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .repo { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Your GitHub Repositories</h1>
+    {% for repo in repos %}
+        <div class="repo">
+            <h2>{{ repo.name }}</h2>
+            <p>{{ repo.description }}</p>
+            <a href="{{ repo.url }}" target="_blank">{{ repo.url }}</a>
+            <p><strong>Language:</strong> {{ repo.language }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
